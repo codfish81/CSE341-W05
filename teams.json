@@ -1,5 +1,5 @@
-[{
-    "team": [{
+[
+    {
         "name": "Jazz",
         "location": "Utah",
         "sport": "Basketball",
@@ -7,9 +7,9 @@
         "conference": "Western",
         "seed": "12th",
         "mascot": "Jazz Bear"
-    }]},
+    },
 
-    {"team2": [{
+    {
         "name": "Timerwolves",
         "location": "Minnesota",
         "sport": "Basketball",
@@ -17,9 +17,9 @@
         "conference": "Western",
         "seed": "8th",
         "mascot": "Crunch the Wolf"
-    }]},
+    },
 
-    {"team3": [{
+    {
         "firstName": "Grizzlies",
         "location": "Memphis",
         "sport": "Basketball",
@@ -27,9 +27,9 @@
         "conference": "Western",
         "seed": "2nd",
         "mascot": "Grizz"
-    }]},
+    },
 
-    {"team4": [{
+    {
         "firstName": "Raptors",
         "location": "Toronto",
         "sport": "Basketball",
@@ -37,9 +37,9 @@
         "conference": "Eastern",
         "seed": "9th",
         "mascot": "The Raptor"
-    }]},
+    },
 
-    {"team5": [{
+    {
         "firstName": "Bulls",
         "location": "Chicago",
         "sport": "Basketball",
@@ -47,5 +47,5 @@
         "conference": "Eastern",
         "seed": "10th",
         "mascot": "Benny the Bull"
-    }]
-}]
+    }
+]
