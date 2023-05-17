@@ -1,5 +1,5 @@
-{
-    "player1": {
+[{
+    "player1": [{
         "firstName": "Breanna",
         "lastName": "Hansen",
         "position": "Point Guard",
@@ -7,9 +7,9 @@
         "birthday": "07/27/1990",
         "height": "4'10",
         "weight": "100lbs"
-    },
+    }]},
 
-    "player2": {
+    {"player2": [{
         "firstName": "Aleah",
         "lastName": "Hansen",
         "position": "Shooting Guard",
@@ -17,9 +17,9 @@
         "birthday": "10/14/2012",
         "height": "4'8",
         "weight": "80lbs"
-    },
+    }]},
 
-    "player3": {
+    {"player3": [{
         "firstName": "Sadie",
         "lastName": "Hansen",
         "position": "Small Forward",
@@ -27,9 +27,9 @@
         "birthday": "02/10/2017",
         "height": "3'3",
         "weight": "60lbs"
-    },
+    }]},
 
-    "player4": {
+    {"player4": [{
         "firstName": "Anders",
         "lastName": "Hansen",
         "position": "Power Forward",
@@ -37,9 +37,9 @@
         "birthday": "04/27/2020",
         "height": "3'1",
         "weight": "40lbs"
-    },
-    
-    "player5": {
+    }]},
+
+    {"player5": [{
         "firstName": "Everly",
         "lastName": "Hansen",
         "position": "Center",
@@ -47,5 +47,5 @@
         "birthday": "01/25/2022",
         "height": "2'0",
         "weight": "20lbs"
-    }
-}
+    }]
+}]
