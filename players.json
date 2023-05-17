@@ -1,0 +1,47 @@
+{
+    "player1": {
+        "firstName": "Breanna",
+        "lastName": "Hansen",
+        "position": "Point Guard",
+        "team": "Jazz",
+        "birthday": "07/27/1990",
+        "height": "4'10",
+        "weight": "100lbs"
+    },
+    "player2": {
+        "firstName": "Aleah",
+        "lastName": "Hansen",
+        "position": "Shooting Guard",
+        "team": "Timerwolves",
+        "birthday": "10/14/2012",
+        "height": "4'8",
+        "weight": "80lbs"
+    },
+    "player3": {
+        "firstName": "Sadie",
+        "lastName": "Hansen",
+        "position": "Small Forward",
+        "team": "Grizzlies",
+        "birthday": "02/10/2017",
+        "height": "3'3",
+        "weight": "60lbs"
+    },
+    "player4": {
+        "firstName": "Anders",
+        "lastName": "Hansen",
+        "position": "Power Forward",
+        "team": "Raptors",
+        "birthday": "04/27/2020",
+        "height": "3'1",
+        "weight": "40lbs"
+    },
+    "player5": {
+        "firstName": "Everly",
+        "lastName": "Hansen",
+        "position": "Center",
+        "team": "Bulls",
+        "birthday": "01/25/2022",
+        "height": "2'0",
+        "weight": "20lbs"
+    }
+}

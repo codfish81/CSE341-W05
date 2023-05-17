@@ -1,0 +1,70 @@
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/644c8c9092aa5b5db575347e
+
+###
+GET http://localhost:8080/contacts/644c8d4992aa5b5db575347f
+
+###
+GET http://localhost:8080/contacts/644c8da292aa5b5db5753480
+
+###
+POST http://localhost:8080/contacts HTTP/1.1
+contact-type: application/json
+
+{
+    "firstName": "Anders",
+    "lastName": "Hansen",
+    "email": "AndersHansen@gmail.com",
+    "favoriteColor": "Blue ",
+    "birthday": "04/27/2020"
+}
+
+###
+PUT http://localhost:8080/contacts/644c8c9092aa5b5db575347e HTTP/1.1
+contact-type: application/json
+
+{
+    "firstName": "Breanna",
+    "lastName": "Hansen",
+    "email": "BreannaHansen@gmail.com",
+    "favoriteColor": "Purple",
+    "birthday": "07/27/1990"
+}
+
+###
+DELETE  http://localhost:8080/contacts/645db3cda80ced4cce6a16fa HTTP/1.1
+
+###
+GET https://week2-26b1.onrender.com/contacts
+
+###
+GET https://week2-26b1.onrender.com/contacts/645daf5ca80ced4cce6a16f9
+
+###
+PUT  https://week2-26b1.onrender.com/contacts/645daf5ca80ced4cce6a16f9
+content-type: application/json
+
+{
+    "firstName": "Breanna",
+    "lastName": "Hansen",
+    "email": "BreannaHansen@gmail.com",
+    "favoriteColor": "Turquoise",
+    "birthday": "07/27/1990"
+}
+
+###
+POST  https://week2-26b1.onrender.com/contacts
+content-type: application/json
+
+{
+    "firstName": "Everly",
+    "lastName": "Hansen",
+    "email": "EverlyHansen@gmail.com",
+    "favoriteColor": "Pink",
+    "birthday": "01/25/2022"
+}
+
+###
+DELETE  https://week2-26b1.onrender.com/contacts/645dba37e5862d1e6f7fdea1
