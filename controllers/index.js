@@ -1,20 +1,28 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db().collection('contacts').find();
+const getAllPlayers = async (req, res, next) => {
+  const result = await mongodb.getDb().db().collection('players').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
 };
 
-const getSingle = async (req, res, next) => {
+const getAllTeams = async (req, res, next) => {
+  const result = await mongodb.getDb().db().collection('teams').find();
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
+};
+
+const getSinglePlayer = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
     .db()
-    .collection('contacts')
+    .collection('players')
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -22,15 +30,30 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createContact = async (req, res) => {
-  const contact = {
+const getSingleTeam = async (req, res, next) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('teams')
+    .find({ _id: userId });
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  });
+};
+
+const createPlayer = async (req, res) => {
+  const player = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    position: req.body.position,
+    team: req.body.team,
+    birthday: req.body.birthday,
+    height: req.body.height,
+    weight: reg.body.weight
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  const response = await mongodb.getDb().db().collection('players').insertOne(player);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -38,21 +61,41 @@ const createContact = async (req, res) => {
   }
 };
 
-const updateContact = async (req, res) => {
+const createTeam = async (req, res) => {
+  const team = {
+    name: req.body.name,
+    location: req.body.location,
+    sport: req.body.sport,
+    record: req.body.record,
+    conference: req.body.conference,
+    seed: req.body.seed,
+    mascot: reg.body.mascot
+  };
+  const response = await mongodb.getDb().db().collection('teams').insertOne(team);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+  }
+};
+
+const updatePlayer = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
-  const contact = {
+  const player = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    position: req.body.position,
+    team: req.body.team,
+    birthday: req.body.birthday,
+    height: req.body.height,
+    weight: reg.body.weight
   };
   const response = await mongodb
     .getDb()
     .db()
-    .collection('contacts')
-    .replaceOne({ _id: userId }, contact);
+    .collection('players')
+    .replaceOne({ _id: userId }, player);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -61,9 +104,34 @@ const updateContact = async (req, res) => {
   }
 };
 
-const deleteContact = async (req, res) => {
+const updateTeam = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+  // be aware of updateOne if you only want to update specific fields
+  const team = {
+    name: req.body.name,
+    location: req.body.location,
+    sport: req.body.sport,
+    record: req.body.record,
+    conference: req.body.conference,
+    seed: req.body.seed,
+    mascot: reg.body.mascot
+  };
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('teams')
+    .replaceOne({ _id: userId }, team);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  }
+};
+
+const deletePlayer = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('players').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
@@ -72,4 +140,15 @@ const deleteContact = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };
+const deleteTeam = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('teams').deleteOne({ _id: userId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
+  }
+};
+
+module.exports = { getAllPlayers, getAllTeams, getSinglePlayer, getSingleTeam, createPlayer, createTeam, updatePlayer, updateTeam, deletePlayer, deleteTeam};
