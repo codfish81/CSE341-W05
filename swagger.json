@@ -5,7 +5,7 @@
     "description": "Contacts API",
     "version": "1.0.0"
   },
-  "host": "week2-26b1.onrender.com",
+  "host": "cse341-w05-w08.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -40,19 +40,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "location": {
                   "example": "any"
                 },
-                "email": {
+                "sport": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "record": {
                   "example": "any"
                 },
-                "birthday": {
+                "conference": {
+                  "example": "any"
+                },
+                "seed": {
                   "example": "any"
                 }
               }
@@ -104,19 +107,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "location": {
                   "example": "any"
                 },
-                "email": {
+                "sport": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "record": {
                   "example": "any"
                 },
-                "birthday": {
+                "conference": {
+                  "example": "any"
+                },
+                "seed": {
                   "example": "any"
                 }
               }
