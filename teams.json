@@ -8,6 +8,7 @@
         "seed": "12th",
         "mascot": "Jazz Bear"
     },
+
     "team2": {
         "name": "Timerwolves",
         "location": "Minnesota",
@@ -17,6 +18,7 @@
         "seed": "8th",
         "mascot": "Crunch the Wolf"
     },
+
     "team3": {
         "firstName": "Grizzlies",
         "location": "Memphis",
@@ -26,6 +28,7 @@
         "seed": "2nd",
         "mascot": "Grizz"
     },
+
     "team4": {
         "firstName": "Raptors",
         "location": "Toronto",
@@ -35,6 +38,7 @@
         "seed": "9th",
         "mascot": "The Raptor"
     },
+    
     "team5": {
         "firstName": "Bulls",
         "location": "Chicago",
