@@ -1,70 +1,72 @@
 GET http://localhost:8080/players
 
 ###
-GET http://localhost:8080/contacts/64697eb69acbb0475730385a
+GET http://localhost:8080/players/64650620e3b8920dbd5273e2
 
 ###
-GET http://localhost:8080/contacts/644c8d4992aa5b5db575347f
-
-###
-GET http://localhost:8080/contacts/644c8da292aa5b5db5753480
-
-###
-POST http://localhost:8080/contacts HTTP/1.1
+POST http://localhost:8080/players HTTP/1.1
 contact-type: application/json
 
 {
-    "firstName": "Anders",
+    "firstName": "Cade",
     "lastName": "Hansen",
-    "email": "AndersHansen@gmail.com",
-    "favoriteColor": "Blue ",
-    "birthday": "04/27/2020"
+    "position": "Bench Warmer",
+    "team": "Sonics",
+    "birthday": "08/23/1987",
+    "height": "5'10",
+    "weight": "160lbs"
 }
 
 ###
-PUT http://localhost:8080/contacts/644c8c9092aa5b5db575347e HTTP/1.1
+PUT http://localhost:8080/players/64650620e3b8920dbd5273e2 HTTP/1.1
 contact-type: application/json
 
 {
     "firstName": "Breanna",
     "lastName": "Hansen",
-    "email": "BreannaHansen@gmail.com",
-    "favoriteColor": "Purple",
-    "birthday": "07/27/1990"
+    "position": "Point Guard",
+    "team": "Rockets",
+    "birthday": "07/27/1990",
+    "height": "4'10",
+    "weight": "100lbs"
 }
 
 ###
-DELETE  http://localhost:8080/contacts/64697eb69acbb0475730385a HTTP/1.1
+DELETE  http://localhost:8080/players/64697eb69acbb0475730385a HTTP/1.1
 
 ###
 GET https://cse341-w05-w08.onrender.com/players
 
 ###
-GET https://week2-26b1.onrender.com/contacts/645daf5ca80ced4cce6a16f9
+GET https://week2-26b1.onrender.com/players/64650620e3b8920dbd5273e3
 
 ###
-PUT  https://week2-26b1.onrender.com/contacts/645daf5ca80ced4cce6a16f9
+PUT  https://week2-26b1.onrender.com/players/645daf5ca80ced4cce6a16f9
 content-type: application/json
 
 {
     "firstName": "Breanna",
     "lastName": "Hansen",
-    "email": "BreannaHansen@gmail.com",
-    "favoriteColor": "Turquoise",
-    "birthday": "07/27/1990"
+    "position": "Point Guard",
+    "team": "Rockets",
+    "birthday": "07/27/1990",
+    "height": "4'10",
+    "weight": "100lbs"
 }
 
 ###
-POST  https://week2-26b1.onrender.com/contacts
+POST  https://week2-26b1.onrender.com/players
 content-type: application/json
 
 {
-    "firstName": "Everly",
+    "firstName": "Cade",
     "lastName": "Hansen",
-    "email": "EverlyHansen@gmail.com",
-    "favoriteColor": "Pink",
-    "birthday": "01/25/2022"
+    "position": "Bench Warmer",
+    "team": "Sonics",
+    "birthday": "08/23/1987",
+    "height": "5'10",
+    "weight": "160lbs"
 }
 
 ###
-DELETE  https://week2-26b1.onrender.com/contacts/645dba37e5862d1e6f7fdea1
+DELETE  https://week2-26b1.onrender.com/players/64697eb69acbb0475730385a
