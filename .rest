@@ -21,6 +21,20 @@ contact-type: application/json
 }
 
 ###
+POST  http://localhost:8080/teams HTTP/1.1
+contact-type: application/json
+
+{
+    "name": "Rockets",
+    "location": "Houston",
+    "sport": "Basketball",
+    "record": "22-60",
+    "conference": "Western",
+    "seed": "14",
+    "mascot": "Clutch"
+}
+
+###
 PUT http://localhost:8080/players/64650620e3b8920dbd5273e2 HTTP/1.1
 contact-type: application/json
 
@@ -32,6 +46,20 @@ contact-type: application/json
     "birthday": "07/27/1990",
     "height": "4'10",
     "weight": "100lbs"
+}
+
+###
+PUT http://localhost:8080/teams/646996ba0e5a7ab667e70696 HTTP/1.1
+contact-type: application/json
+
+{
+    "name": "Sonics",
+    "location": "Seattle",
+    "sport": "Basketball",
+    "record": "0-0",
+    "conference": "Western",
+    "seed": "50",
+    "mascot": "Squatch"
 }
 
 ###
@@ -58,6 +86,20 @@ content-type: application/json
 }
 
 ###
+PUT http://cse341-w05-w08.onrender.com/teams/646996ba0e5a7ab667e70696 HTTP/1.1
+contact-type: application/json
+
+{
+    "name": "Sonics",
+    "location": "Seattle",
+    "sport": "Basketball",
+    "record": "0-0",
+    "conference": "Western",
+    "seed": "50",
+    "mascot": "Squatch"
+}
+
+###
 POST  https://cse341-w05-w08.onrender.com/players
 content-type: application/json
 
@@ -69,6 +111,20 @@ content-type: application/json
     "birthday": "08/23/1987",
     "height": "5'10",
     "weight": "160lbs"
+}
+
+###
+POST  http://cse341-w05-w08.onrender.com/teams HTTP/1.1
+contact-type: application/json
+
+{
+    "name": "Rockets",
+    "location": "Houston",
+    "sport": "Basketball",
+    "record": "22-60",
+    "conference": "Western",
+    "seed": "14",
+    "mascot": "Clutch"
 }
 
 ###
