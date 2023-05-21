@@ -38,10 +38,10 @@ DELETE  http://localhost:8080/players/64697eb69acbb0475730385a HTTP/1.1
 GET https://cse341-w05-w08.onrender.com/players
 
 ###
-GET https://week2-26b1.onrender.com/players/64650620e3b8920dbd5273e3
+GET https://cse341-w05-w08.onrender.com/players/64650620e3b8920dbd5273e3
 
 ###
-PUT  https://week2-26b1.onrender.com/players/645daf5ca80ced4cce6a16f9
+PUT  https://cse341-w05-w08.onrender.com/players/645daf5ca80ced4cce6a16f9
 content-type: application/json
 
 {
@@ -55,7 +55,7 @@ content-type: application/json
 }
 
 ###
-POST  https://week2-26b1.onrender.com/players
+POST  https://cse341-w05-w08.onrender.com/players
 content-type: application/json
 
 {
@@ -69,4 +69,4 @@ content-type: application/json
 }
 
 ###
-DELETE  https://week2-26b1.onrender.com/players/64697eb69acbb0475730385a
+DELETE  https://cse341-w05-w08.onrender.com/players/64697eb69acbb0475730385a
