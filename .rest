@@ -1,7 +1,7 @@
 GET http://localhost:8080/players
 
 ###
-GET http://localhost:8080/contacts/644c8c9092aa5b5db575347e
+GET http://localhost:8080/contacts/64697eb69acbb0475730385a
 
 ###
 GET http://localhost:8080/contacts/644c8d4992aa5b5db575347f
@@ -34,7 +34,7 @@ contact-type: application/json
 }
 
 ###
-DELETE  http://localhost:8080/contacts/645db3cda80ced4cce6a16fa HTTP/1.1
+DELETE  http://localhost:8080/contacts/64697eb69acbb0475730385a HTTP/1.1
 
 ###
 GET https://cse341-w05-w08.onrender.com/players
