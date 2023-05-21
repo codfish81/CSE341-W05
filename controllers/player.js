@@ -30,7 +30,7 @@ const getSinglePlayer = async (req, res, next) => {
       team: req.body.team,
       birthday: req.body.birthday,
       height: req.body.height,
-      weight: reg.body.weight
+      weight: req.body.weight
     };
     const response = await mongodb.getDb().db().collection('players').insertOne(player);
     if (response.acknowledged) {
@@ -50,7 +50,7 @@ const getSinglePlayer = async (req, res, next) => {
       team: req.body.team,
       birthday: req.body.birthday,
       height: req.body.height,
-      weight: reg.body.weight
+      weight: req.body.weight
     };
     const response = await mongodb
       .getDb()

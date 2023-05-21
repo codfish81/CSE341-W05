@@ -30,7 +30,7 @@ const getAllTeams = async (req, res, next) => {
       record: req.body.record,
       conference: req.body.conference,
       seed: req.body.seed,
-      mascot: reg.body.mascot
+      mascot: req.body.mascot
     };
     const response = await mongodb.getDb().db().collection('teams').insertOne(team);
     if (response.acknowledged) {
@@ -50,7 +50,7 @@ const getAllTeams = async (req, res, next) => {
       record: req.body.record,
       conference: req.body.conference,
       seed: req.body.seed,
-      mascot: reg.body.mascot
+      mascot: req.body.mascot
     };
     const response = await mongodb
       .getDb()

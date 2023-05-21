@@ -1,6 +1,9 @@
 GET http://localhost:8080/players
 
 ###
+GET http://localhost:8080/teams
+
+###
 GET http://localhost:8080/players/64650620e3b8920dbd5273e2
 
 ###
