@@ -39,22 +39,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
+                "firstName": {
                   "example": "any"
                 },
-                "location": {
+                "lastName": {
                   "example": "any"
                 },
-                "sport": {
+                "position": {
                   "example": "any"
                 },
-                "record": {
+                "team": {
                   "example": "any"
                 },
-                "conference": {
+                "birthday": {
                   "example": "any"
                 },
-                "seed": {
+                "height": {
+                  "example": "any"
+                },
+                "weight": {
                   "example": "any"
                 }
               }
@@ -106,22 +109,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
+                "firstName": {
                   "example": "any"
                 },
-                "location": {
+                "lastName": {
                   "example": "any"
                 },
-                "sport": {
+                "position": {
                   "example": "any"
                 },
-                "record": {
+                "team": {
                   "example": "any"
                 },
-                "conference": {
+                "birthday": {
                   "example": "any"
                 },
-                "seed": {
+                "height": {
+                  "example": "any"
+                },
+                "weight": {
                   "example": "any"
                 }
               }
@@ -196,6 +202,9 @@
                 },
                 "seed": {
                   "example": "any"
+                },
+                "mascot": {
+                  "example": "any"
                 }
               }
             }
@@ -262,6 +271,9 @@
                   "example": "any"
                 },
                 "seed": {
+                  "example": "any"
+                },
+                "mascot": {
                   "example": "any"
                 }
               }
