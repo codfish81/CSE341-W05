@@ -17,6 +17,9 @@ const getAllPlayers = async (req, res, next) => {
 };
 
 const getSinglePlayer = async (req, res, next) => {
+  if (!ObjectId.isValid(req.params.id)){
+    res.status(400).json('Must use valid id to get player.');
+  }
     const userId = new ObjectId(req.params.id);
     mongodb
       .getDb()
@@ -51,6 +54,9 @@ const getSinglePlayer = async (req, res, next) => {
   };
 
   const updatePlayer = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+      res.status(400).json('Must use valid id to update player.');
+    }
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
     const player = {
@@ -76,6 +82,9 @@ const getSinglePlayer = async (req, res, next) => {
   };
 
   const deletePlayer = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+      res.status(400).json('Must use valid id to delete player.');
+    }
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('players').deleteOne({ _id: userId }, true);
     console.log(response);
