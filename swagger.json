@@ -5,11 +5,11 @@
     "description": "Contacts API",
     "version": "1.0.0"
   },
-  "host": "cse341-w05-w08.onrender.com",
+  
+  "host": "localhost:8080",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  
+  "schemes": ["http"],
   "paths": {
     "/api-docs": {
       "get": {
