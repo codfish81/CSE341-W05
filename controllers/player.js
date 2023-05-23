@@ -27,20 +27,27 @@ const getSinglePlayer = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)){
     res.status(400).json('Must use valid id to get player.');
   }
-    const userId = new ObjectId(req.params.id);
-    mongodb
-      .getDb()
-      .db()
-      .collection('players')
-      .find({_id: userId})
-      .toArray((err, lists) => {
-        if (err) {
-          res.status(400).json({message: err});
-        }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
-    });
-  };
+    //const userId = new ObjectId(req.params.id);
+    const result = await mongodb.getDb().db().collection('players').find();
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
+};
+
+  //   mongodb
+  //     .getDb()
+  //     .db()
+  //     .collection('players')
+  //     .find({_id: userId})
+  //     .toArray((err, lists) => {
+  //       if (err) {
+  //         res.status(400).json({message: err});
+  //       }
+  //     res.setHeader('Content-Type', 'application/json');
+  //     res.status(200).json(lists[0]);
+  //   });
+  // };
 
   const createPlayer = async (req, res) => {
     const player = {
