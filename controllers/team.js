@@ -32,10 +32,11 @@ const getAllTeams = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)){
       res.status(400).json('Must use valid id to get team.');
     }
-    const result = await mongodb.getDb().db().collection('teams').find();
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb.getDb().db().collection('teams').find({_id: userId});
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
+      res.status(200).json(lists[0]);
     });
   }catch(err){
     res.status(500).json(err);
