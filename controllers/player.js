@@ -27,14 +27,13 @@ const getSinglePlayer = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)){
     res.status(400).json('Must use valid id to get player.');
   }
-    //const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('players').find();
-  result.toArray().then((lists) => {
+    result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
 };
-
+  //const userId = new ObjectId(req.params.id);
   //   mongodb
   //     .getDb()
   //     .db()
