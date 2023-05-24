@@ -2,11 +2,15 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllPlayers = async (req, res, next) => {
+  try{
   const result = await mongodb.getDb().db().collection('players').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
+}catch(err){
+  res.status(500).json(err);
+}
 };
 
 //   mongodb
@@ -24,6 +28,7 @@ const getAllPlayers = async (req, res, next) => {
 // };
 
 const getSinglePlayer = async (req, res, next) => {
+  try{
   if (!ObjectId.isValid(req.params.id)){
     res.status(400).json('Must use valid id to get player.');
   }
@@ -32,6 +37,9 @@ const getSinglePlayer = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
+}catch(err){
+  res.status(500).json(err);
+}
 };
   //const userId = new ObjectId(req.params.id);
   //   mongodb
@@ -49,6 +57,7 @@ const getSinglePlayer = async (req, res, next) => {
   // };
 
   const createPlayer = async (req, res) => {
+    try{
     const player = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -64,9 +73,13 @@ const getSinglePlayer = async (req, res, next) => {
     } else {
       res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
+  }catch(err){
+    res.status(500).json(err);
+  }
   };
 
   const updatePlayer = async (req, res) => {
+    try{
     if (!ObjectId.isValid(req.params.id)){
       res.status(400).json('Must use valid id to update player.');
     }
@@ -92,9 +105,13 @@ const getSinglePlayer = async (req, res, next) => {
     } else {
       res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }
+  }catch(err){
+    res.status(500).json(err);
+  }
   };
 
   const deletePlayer = async (req, res) => {
+    try{
     if (!ObjectId.isValid(req.params.id)){
       res.status(400).json('Must use valid id to delete player.');
     }
@@ -106,6 +123,9 @@ const getSinglePlayer = async (req, res, next) => {
     } else {
       res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
     }
+  }catch(err){
+    res.status(500).json(err);
+  }
   };
 
   module.exports = { getAllPlayers, getSinglePlayer, createPlayer, updatePlayer, deletePlayer};
