@@ -28,7 +28,6 @@ const getAllPlayers = async (req, res, next) => {
 // };
 
 const getSinglePlayer = async (req, res, next) => {
-  try{
   if (!ObjectId.isValid(req.params.id)){
     res.status(400).json('Must use valid id to get player.');
   }
@@ -37,9 +36,6 @@ const getSinglePlayer = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
-}catch(err){
-  res.status(500).json(err);
-}
 };
   //const userId = new ObjectId(req.params.id);
   //   mongodb
