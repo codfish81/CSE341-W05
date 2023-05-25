@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllTeams = async (req, res, next) => {
   try{
-  const result = await mongodb.getDb().db().collection('teams').find();
+  const result = await mongodb.getDb().db('portfolio-builder').collection('teams').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -33,7 +33,7 @@ const getAllTeams = async (req, res, next) => {
       res.status(400).json('Must use valid id to get team.');
     }
     const userId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection('teams').find({_id: userId});
+    const result = await mongodb.getDb().db('portfolio-builder').collection('teams').find({_id: userId});
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);
@@ -68,7 +68,7 @@ const getAllTeams = async (req, res, next) => {
       seed: req.body.seed,
       mascot: req.body.mascot
     };
-    const response = await mongodb.getDb().db().collection('teams').insertOne(team);
+    const response = await mongodb.getDb().db('portfolio-builder').collection('teams').insertOne(team);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -97,7 +97,7 @@ const getAllTeams = async (req, res, next) => {
     };
     const response = await mongodb
       .getDb()
-      .db()
+      .db('portfolio-builder')
       .collection('teams')
       .replaceOne({ _id: userId }, team);
     console.log(response);
@@ -117,7 +117,7 @@ const getAllTeams = async (req, res, next) => {
       res.status(400).json('Must use valid id to delete team.');
     }
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('teams').deleteOne({ _id: userId }, true);
+    const response = await mongodb.getDb().db('portfolio-builder').collection('teams').deleteOne({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(200).send();

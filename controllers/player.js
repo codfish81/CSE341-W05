@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllPlayers = async (req, res, next) => {
   try{
-  const result = await mongodb.getDb().db().collection('players').find();
+  const result = await mongodb.getDb().db('portfolio-builder').collection('players').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -33,7 +33,7 @@ const getSinglePlayer = async (req, res, next) => {
     res.status(400).json('Must use valid id to get player.');
   }
     const userId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection('players').find({_id: userId});
+    const result = await mongodb.getDb().db('portfolio-builder').collection('players').find({_id: userId});
     result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
@@ -68,7 +68,7 @@ const getSinglePlayer = async (req, res, next) => {
       height: req.body.height,
       weight: req.body.weight
     };
-    const response = await mongodb.getDb().db().collection('players').insertOne(player);
+    const response = await mongodb.getDb().db('portfolio-builder').collection('players').insertOne(player);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -97,7 +97,7 @@ const getSinglePlayer = async (req, res, next) => {
     };
     const response = await mongodb
       .getDb()
-      .db()
+      .db('portfolio-builder')
       .collection('players')
       .replaceOne({ _id: userId }, player);
     console.log(response);
@@ -117,7 +117,7 @@ const getSinglePlayer = async (req, res, next) => {
       res.status(400).json('Must use valid id to delete player.');
     }
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('players').deleteOne({ _id: userId }, true);
+    const response = await mongodb.getDb().db('portfolio-builder').collection('players').deleteOne({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(200).send();
