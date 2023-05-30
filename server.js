@@ -1,11 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const morgan = require('morgan');
+const exphbs = require('express-handlebars');
 const app = express();
 const port = process.env.PORT || 8080
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+
+if(process.env.NODE_ENV === 'development'){
+  app.use(morgan('dev'));
+};
+
+ app.engine('.hbs', exphbs.engine({defaultLayout: 'main', extname: '.hbs'}));
+ app.set('view engine', '.hbs');
 
 app
 .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
