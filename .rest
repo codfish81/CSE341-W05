@@ -44,7 +44,7 @@ contact-type: application/json
     "position": "Point Guard",
     "team": "Rockets",
     "birthday": "07/27/1990",
-    "height": "4'10",
+    "height": "4 10",
     "weight": "100lbs"
 }
 
@@ -72,7 +72,7 @@ GET https://cse341-w05-w08.onrender.com/players
 GET https://cse341-w05-w08.onrender.com/players/64650620e3b8920dbd5273e3
 
 ###
-PUT  https://cse341-w05-w08.onrender.com/players/645daf5ca80ced4cce6a16f9
+PUT  https://cse341-w05-w08.onrender.com/players/64650620e3b8920dbd5273e2
 content-type: application/json
 
 {
@@ -81,7 +81,7 @@ content-type: application/json
     "position": "Point Guard",
     "team": "Rockets",
     "birthday": "07/27/1990",
-    "height": "4'10",
+    "height": "4 10",
     "weight": "100lbs"
 }
 
