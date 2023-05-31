@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 routes.get('/', (req, res)=> {
-    res.render('login')
+    res.render('login', {layout: 'login'})
 })
 
 routes.get('/dashboard', (req, res)=> {

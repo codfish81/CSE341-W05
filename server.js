@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
@@ -15,6 +16,8 @@ if(process.env.NODE_ENV === 'development'){
 
  app.engine('.hbs', exphbs.engine({defaultLayout: 'main', extname: '.hbs'}));
  app.set('view engine', '.hbs');
+
+ app.use(express.static(path.join(__dirname, '/public')))
 
 app
 .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
